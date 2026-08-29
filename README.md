@@ -6,7 +6,7 @@
 
 ![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
 ![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
-![skills](https://img.shields.io/badge/skills-22-green?style=flat-square)
+![skills](https://img.shields.io/badge/skills-23-green?style=flat-square)
 ![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
 
 
@@ -42,6 +42,7 @@
 | natural-chinese-writer | 把僵硬套话改成自然表达,保留原意 | "这段文字看着别扭,改一下" |
 | skill-creator-cn | 从需求出发创建符合规范的新技能 | "帮我做一个技能" |
 | skill-style-guide | 检查技能是否符合仓库风格 | "这个技能风格对吗" |
+| weekly-report | 收集本周 git 提交,整理成"完成/进行中/风险/下一步"结构的中文周报 | "帮我写周报" |
 
 ## 典型使用流程
 
