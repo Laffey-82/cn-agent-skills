@@ -6,7 +6,7 @@
 
 ![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
 ![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
-![skills](https://img.shields.io/badge/skills-23-green?style=flat-square)
+![skills](https://img.shields.io/badge/skills-24-green?style=flat-square)
 ![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
 
 
@@ -43,6 +43,7 @@
 | skill-creator-cn | 从需求出发创建符合规范的新技能 | "帮我做一个技能" |
 | skill-style-guide | 检查技能是否符合仓库风格 | "这个技能风格对吗" |
 | weekly-report | 收集本周 git 提交,整理成"完成/进行中/风险/下一步"结构的中文周报 | "帮我写周报" |
+| release-note-writer | 从 git 历史生成发版说明或 CHANGELOG 条目,破坏性变更单独列出 | "写 release notes" |
 
 ## 典型使用流程
 
@@ -57,6 +58,7 @@
 6. "写个 commit message"           → commit-message-writer 规范提交
 7. "帮我搭个 CI"                   → ci-cd-setup 自动化构建测试
 8. "这个接口好慢"                  → performance-profiler 建基线定位瓶颈
+9. "发个版,写 release notes"      → release-note-writer 生成发版说明
 ```
 
 每步的产出是下一步的输入,和平时开发节奏一致。单独用也可以,哪个场景需要就触发哪个。
