@@ -14,7 +14,7 @@ Chinese-first agent skills for Claude Code, Codex, Cursor, TRAE and OpenCode. Ea
 
 English-first skill libraries miss how Chinese developers actually work. Triggers are written in English, so phrases like "帮我理下需求" often do nothing. Commit messages, docs and comments come out in a style that does not fit Chinese teams. Skills are scattered, with no coherent workflow between them.
 
-This repo turns the 22 most common development scenarios into skills. Content is written from scratch, not copied. Every skill passes the official validator and ships with trigger examples and verification steps.
+This repo turns the 23 most common development scenarios into skills. Content is written from scratch, not copied. Every skill passes the official validator and ships with trigger examples and verification steps.
 
 ## Skill list
 

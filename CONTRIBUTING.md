@@ -6,11 +6,22 @@
 
 1. 先读 [docs/STYLE_GUIDE.md](./docs/STYLE_GUIDE.md) 和 [docs/CHECKLIST.md](./docs/CHECKLIST.md),搞清仓库的规矩;
 2. 动手前想清楚三件事:解决什么问题、什么时候触发、产出是什么。想不清楚就先开个 Issue 讨论;
-3. 在 `skills/<技能名>/` 下写 `SKILL.md`,frontmatter 要有 `name` 和 `description`:
+3. 生成骨架再填充(推荐),也可以手动写 `skills/<技能名>/SKILL.md`:
+
+   ```bash
+   python skills/skill-creator-cn/scripts/skill_scaffold.py <技能名> --description "<做什么 + 什么时候用>"
+   ```
+
+   frontmatter 要有 `name` 和 `description`:
    - `name` 小写、连字符,和目录名一致;
    - `description` 写清"做什么 + 什么时候用",中文为主,附英文关键词方便搜索;
 4. SKILL.md 控制在 500 行内,内容多了拆到 `references/` 或 `scripts/`;
-5. 跑官方校验:`skills-ref validate ./skills/<技能名>`;
+5. 跑机器自检,全过再进人工评审:
+
+   ```bash
+   python skills/skill-style-guide/scripts/style_checker.py <技能名>
+   skills-ref validate ./skills/<技能名>
+   ```
 6. 在至少一种 Agent 里用真实任务试一遍,能触发、能跑完、产出对,才算完成;
 7. 更新 README 技能列表和 [docs/ROADMAP.md](./docs/ROADMAP.md),然后在 PR 里写清楚验证过程。
 
