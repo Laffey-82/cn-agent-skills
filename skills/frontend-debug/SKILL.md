@@ -87,6 +87,17 @@ metadata:
 
 **验证:** 登录跳转后页面正常,Console 无红色报错。
 
+## 辅助脚本
+
+[scripts/devtools_extract.py](scripts/devtools_extract.py) 从 HAR 文件或 Console 导出文本中提取失败请求、4xx/5xx、慢请求和错误行:
+
+```bash
+python scripts/devtools_extract.py network.har
+python scripts/devtools_extract.py console.txt
+```
+
+脚本只做提取,结论需要人确认。
+
 ## 注意事项
 
 - 结论要有证据:报错、请求、截图都算,不能"看起来是";
@@ -106,4 +117,5 @@ metadata:
 1. 触发:"页面白屏""前端报错""按钮没反应";
 2. 检查:报告含 Console/Network 证据和根因;
 3. 复核:按修复后的步骤重走一遍,Console 干净、功能正常。
+
 
