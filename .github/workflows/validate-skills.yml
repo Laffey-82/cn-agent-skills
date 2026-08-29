@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: Validate all skills
         run: |
           set -e
@@ -30,3 +30,4 @@ jobs:
             echo "::error::Skill validation failed"
             exit 1
           fi
+
