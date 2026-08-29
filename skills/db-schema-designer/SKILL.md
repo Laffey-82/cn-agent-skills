@@ -104,6 +104,16 @@ SQL
 - `orders(status)` — 按状态筛选(数据量大了再考虑);
 - `order_items(order_id)` — 外键列。
 
+## 辅助脚本
+
+[scripts/schema_checker.py](scripts/schema_checker.py) 扫描 SQL/ORM 文件,标记驼峰命名、金额浮点、主键命名等问题:
+
+```bash
+python scripts/schema_checker.py <目录或文件>
+```
+
+脚本只做标记,结论需要人确认(排除关键字误报)。
+
 ## 注意事项
 
 - 先问查询模式再定索引,索引是给查询服务的;
@@ -123,4 +133,5 @@ SQL
 1. 触发:"帮我设计数据模型""建几张表";
 2. 检查:交付物含表定义、索引、建表脚本、查询模式分析;
 3. 走查:用核心查询语句跑 EXPLAIN,确认索引命中。
+
 

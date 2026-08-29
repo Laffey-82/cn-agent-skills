@@ -94,6 +94,16 @@ git rebase -i HEAD~3
 feat(api): 增加用户注册接口
 ```
 
+## 辅助脚本
+
+[scripts/git_stats.py](scripts/git_stats.py) 统计最近提交的类型分布、作者分布,标出信息不规范或超长的提交:
+
+```bash
+python scripts/git_stats.py --count 50
+```
+
+脚本只做统计,结论需要人确认。
+
 ## 注意事项
 
 - **改写已推送的共享分支历史前必须确认**,未经确认不做 `push -f`;
@@ -112,3 +122,4 @@ feat(api): 增加用户注册接口
 1. 触发:"整理一下提交历史";
 2. 检查:每个 commit 只包含一件事,信息规范,历史线性;
 3. 验证:工作区干净,测试通过。
+
