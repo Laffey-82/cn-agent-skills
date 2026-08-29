@@ -150,6 +150,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="技能风格检查")
     parser.add_argument("skills", nargs="*", help="技能名或技能目录,默认扫描全部")
     parser.add_argument("--repo", default=None, help="仓库根目录,默认取脚本所在仓库")
+    parser.add_argument("--strict", action="store_true", help="存在'必须'级问题时以非零码退出(用于 CI)")
     args = parser.parse_args()
 
     repo = Path(args.repo) if args.repo else Path(__file__).resolve().parents[3]
@@ -202,6 +203,9 @@ def main() -> int:
     print(f"\n共检查 {checked} 个技能,标记 {total_must + total_suggest} 项"
           f"(必须 {total_must} 项,建议 {total_suggest} 项)。")
     print("脚本只做标记,请逐条对照 references/REVIEW_GUIDE.md 人工确认。")
+    if args.strict and total_must > 0:
+        print("strict 模式:存在'必须'级问题,退出码 1。")
+        return 1
     return 0
 
 

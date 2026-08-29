@@ -49,3 +49,8 @@ jobs:
             echo "::error::Python syntax check failed"
             exit 1
           fi
+      - name: Repo style and doc checks
+        run: |
+          set -e
+          python skills/skill-style-guide/scripts/style_checker.py --repo . --strict
+          python skills/tech-doc-writer/scripts/doc_checker.py skills/*/SKILL.md --strict

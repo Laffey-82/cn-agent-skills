@@ -110,15 +110,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="技术文档检查")
     parser.add_argument("files", nargs="+", help="Markdown 文档路径")
     parser.add_argument("--require", nargs="*", default=[], help="必需章节名,按 ## 标题匹配")
+    parser.add_argument("--strict", action="store_true", help="存在'必须'级问题时以非零码退出(用于 CI)")
     args = parser.parse_args()
 
     total = 0
+    total_must = 0
     for file_arg in args.files:
         path = Path(file_arg)
         findings = check_doc(path, args.require)
         must = sum(1 for _, level, _ in findings if level == "必须")
         suggest = len(findings) - must
         total += len(findings)
+        total_must += must
 
         print(f"\n== {path} ==")
         if not findings:
@@ -131,6 +134,9 @@ def main() -> int:
         print(f"  结论:{verdict}(必须 {must} 项,建议 {suggest} 项)")
 
     print(f"\n共检查 {len(args.files)} 个文档,标记 {total} 项。请逐条人工确认后再定稿。")
+    if args.strict and total_must > 0:
+        print("strict 模式:存在'必须'级问题,退出码 1。")
+        return 1
     return 0
 
 
