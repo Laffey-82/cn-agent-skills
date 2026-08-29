@@ -56,6 +56,8 @@ metadata:
 
 ### 第 5 步:输出评审报告
 
+PostgreSQL/MySQL 差异对照与锁阻塞速查见 [references/DB_DIFFERENCES.md](references/DB_DIFFERENCES.md)。
+
 ```markdown
 # 迁移评审报告:<文件名>
 
@@ -114,3 +116,4 @@ UPDATE orders SET discount = 0;
 1. 触发:"帮我看下这个迁移安不安全";
 2. 检查:报告覆盖锁表、回滚、数据一致性,问题带级别和证据;
 3. 抽查:任选一条 P0/P1 意见,对照迁移文件确认问题真实存在。
+
