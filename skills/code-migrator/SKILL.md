@@ -95,6 +95,10 @@ metadata:
 
 **结果:** 每批独立合入,行为对照清单确认无回归。
 
+## 参考
+
+四种策略的选型、执行要点和风险控制清单见 [references/STRATEGIES.md](references/STRATEGIES.md)。
+
 ## 辅助脚本
 [scripts/migration_checklist.py](scripts/migration_checklist.py) 生成迁移检查清单:自动统计仓库文件,输出现状评估、策略选项、分批计划模板:
 
@@ -123,4 +127,5 @@ python scripts/migration_checklist.py "Python 2 迁到 Python 3"
 1. 触发:"帮我把项目迁到 X";
 2. 检查:有现状评估、分批计划、行为对照清单;
 3. 走查:每批有测试结果,行为差异有记录。
+
 
