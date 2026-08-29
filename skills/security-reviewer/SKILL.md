@@ -57,6 +57,8 @@ metadata:
 
 ### 第 3 步:验证与输出
 
+完整检查清单与危险写法速认表见 [references/OWASP_CHECKLIST.md](references/OWASP_CHECKLIST.md)。
+
 能本地验证的(拼接 SQL、硬编码密钥、未编码输出)直接指到具体行;需要环境验证的(越权、CSRF)标注验证方法。
 
 输出报告:
@@ -115,3 +117,4 @@ cursor.execute(query, (user_input,))
 1. 触发:"帮我看下安不安全""有没有漏洞";
 2. 检查:报告覆盖注入、认证授权、数据泄露、Web 通用项;
 3. 抽查:任选一条 P0/P1,对照代码确认问题真实存在。
+

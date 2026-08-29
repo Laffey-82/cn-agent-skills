@@ -31,6 +31,8 @@ metadata:
 
 ### 第 3 步:取证定位
 
+工具选择、指标含义、profiler 读法见 [references/TOOLS_METRICS.md](references/TOOLS_METRICS.md)。
+
 按场景选工具:
 
 | 场景 | 工具 |
@@ -112,3 +114,4 @@ metadata:
 1. 触发:"这个接口好慢""帮我查性能";
 2. 检查:报告含基线、瓶颈证据、优化前后数字;
 3. 复核:按报告步骤重跑,结果可复现。
+
