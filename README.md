@@ -37,6 +37,15 @@
 | skill-creator-cn | 从需求出发创建符合规范的新技能 | "帮我做一个技能" |
 | skill-style-guide | 检查技能是否符合仓库风格 | "这个技能风格对吗" |
 
+## 技能结构
+
+技能按深度分三层,都是按需加载:
+
+- **文档 + 参考资料**:如 requirement-clarifier 的提问模板、api-tester 的用例设计参考;
+- **可执行脚本**:如 code-reviewer 的扫描脚本、performance-profiler 的基准脚本;
+- **完整示例**:如 tdd-workflow 的可运行红绿重构示例、api-tester 的契约测试示例。
+
+工具型技能(SKILL.md 里的"辅助脚本"章节)都会说明用法,脚本只做标记或测量,结论由人确认。
 ## 安装
 
 ### 方式一:gh skill(推荐)
@@ -93,6 +102,7 @@ curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/inst
 ## License
 
 [MIT](./LICENSE)
+
 
 
 

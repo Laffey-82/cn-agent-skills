@@ -37,6 +37,15 @@ This repo turns the 22 most common development scenarios into skills. Content is
 | skill-creator-cn | Create a new spec-compliant skill from a need | "帮我做一个技能" |
 | skill-style-guide | Check a skill against the repo style | "这个技能风格对吗" |
 
+## Skill structure
+
+Skills come in three layers, loaded on demand:
+
+- **Docs + references**: e.g. question templates in requirement-clarifier, case design in api-tester;
+- **Executable scripts**: e.g. the scan helper in code-reviewer, the benchmark script in performance-profiler;
+- **Runable examples**: e.g. the red-green-refactor example in tdd-workflow, the contract test in api-tester.
+
+Tool skills include a "辅助脚本" section in their SKILL.md explaining usage. Scripts only flag or measure; conclusions are confirmed by humans.
 ## Install
 
 ### Method 1: gh skill (recommended)
@@ -79,6 +88,7 @@ See [docs/ROADMAP.md](./docs/ROADMAP.md).
 ## License
 
 [MIT](./LICENSE)
+
 
 
 
