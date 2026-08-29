@@ -3,7 +3,8 @@
 ## 已完成
 
 - v0.1.0(2026-08-29):仓库结构、首批 10 个技能、中英 README、install.sh、CI 校验、GitHub 发布
-- v0.2.0(规划中):新增 api-tester、ci-cd-setup、natural-chinese-writer;全仓库文案去 AI 化
+- v0.2.0(2026-08-29):新增 api-tester、ci-cd-setup、natural-chinese-writer,技能总数 13;文档同步重写
+- v0.3.0(规划中):新增 db-migration-reviewer、dev-env-troubleshooter,技能总数 15
 
 ## 接下来
 
@@ -28,3 +29,4 @@
 - 原创,不搬运
 - 每个技能解决一个具体问题,不做万能技能
 - 质量不合格的不收录
+
