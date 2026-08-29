@@ -96,6 +96,16 @@ metadata:
 - 穿透:查不到的商品缓存空值 1 分钟;
 - 监控:命中率、回源 QPS。
 
+## 辅助脚本
+
+[scripts/cache_key_scanner.py](scripts/cache_key_scanner.py) 扫描代码中的缓存 key 写法,标记无前缀、缺版本、set 无 TTL 等问题:
+
+```bash
+python scripts/cache_key_scanner.py <目录或文件>
+```
+
+脚本只做标记,结论需要人确认。
+
 ## 注意事项
 
 - 缓存不是万能的:写多读少、一致性要求极高的数据别缓存;
@@ -115,3 +125,4 @@ metadata:
 1. 触发:"加个缓存""缓存穿透了""缓存不一致";
 2. 检查:key/TTL 规范明确,三类故障有防御,一致性有方案;
 3. 走查:压测或观察命中率和回源率,确认达标。
+

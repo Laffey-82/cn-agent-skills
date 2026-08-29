@@ -121,6 +121,17 @@ feat(api): 移除 v1 登录接口
 BREAKING CHANGE: v1 /login 接口移除,请迁移到 v2 /login。
 ```
 
+## 辅助脚本
+
+[scripts/commit_message_gen.py](scripts/commit_message_gen.py) 根据暂存区改动生成提交信息草稿(推断类型和范围),不执行 commit:
+
+```bash
+git add -A
+python scripts/commit_message_gen.py
+```
+
+生成的草稿需要人工完善 subject。
+
 ## 注意事项
 
 - **不要用"update""修复了一些东西"这类无信息提交**;
@@ -139,5 +150,6 @@ BREAKING CHANGE: v1 /login 接口移除,请迁移到 v2 /login。
 1. 触发:"写个 commit message";
 2. 检查:格式为 `<type>: <subject>`,subject ≤ 72 字符且动词开头;
 3. 抽查:对照 `git diff`,确认描述与改动一致。
+
 
 
