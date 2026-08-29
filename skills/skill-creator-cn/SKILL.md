@@ -44,6 +44,8 @@ skills/<skill-name>/
 
 ### 第 3 步:编写 SKILL.md
 
+先用脚本生成骨架(见下面的[辅助脚本](#辅助脚本)),再按章节填充。
+
 质量标准(按重要程度排序):
 
 1. **假设 Agent 已有能力**:只写能改变决策的信息,不写通用建议、重复要求和"要认真仔细"这类空话;
@@ -79,13 +81,19 @@ metadata:
 - 需要确定性执行的操作(如文件解析、数据转换)写成 `scripts/` 脚本,并说明运行环境;
 - 需要详细背景或表单模板的放 `references/`,从 SKILL.md 用相对路径引用。
 
-### 第 5 步:校验
+### 第 5 步:自检与评审
+
+先跑机器检查:
 
 ```bash
-# 官方校验工具
+# 风格检查(只做标记,结论人工确认)
+python skills/skill-style-guide/scripts/style_checker.py <skill-name>
+
+# 官方校验
 skills-ref validate ./skills/<skill-name>
 
-# 或本地快速检查 frontmatter 与命名
+# 脚本语法
+python -m py_compile skills/<skill-name>/scripts/*.py
 ```
 
 检查:
@@ -94,6 +102,8 @@ skills-ref validate ./skills/<skill-name>
 - frontmatter 合法;
 - description 触发词清晰;
 - 引用文件路径正确。
+
+然后按 [references/REVIEW_PROCESS.md](references/REVIEW_PROCESS.md) 的"人工评审重点"逐条过:内容原创、示例可运行、验证方式写清。
 
 ### 第 6 步:实测触发
 
@@ -122,12 +132,24 @@ skills-ref validate ./skills/<skill-name>
 - 产出:Markdown 周报(本周完成/下周计划/风险);
 - 结构:`skills/weekly-report/SKILL.md` + `scripts/collect_git_log.sh`。
 
+## 辅助脚本
+
+[scripts/skill_scaffold.py](scripts/skill_scaffold.py) 生成符合仓库标准的 SKILL.md 骨架,并校验技能名和描述:
+
+```bash
+# 在仓库根目录执行
+python skills/skill-creator-cn/scripts/skill_scaffold.py weekly-report --description "根据本周提交和工作事项生成周报,周五触发"
+```
+
+生成的是起点,章节按实际情况填充或删除,不覆盖已存在的目录。完整流程见 [references/REVIEW_PROCESS.md](references/REVIEW_PROCESS.md)。
+
 ## 注意事项
 
 - **先收敛需求再动手**,避免做出来不是用户要的;
 - 技能要"窄而深":一个技能只解决一个问题,不要做万能技能;
 - description 是触发核心,写完后用"用户会怎么说"反向检查;
 - 内容必须原创。
+- 新技能从想法到合并按 [references/REVIEW_PROCESS.md](references/REVIEW_PROCESS.md) 走,不带病入库。
 
 ## 不适用场景
 
@@ -138,6 +160,7 @@ skills-ref validate ./skills/<skill-name>
 ## 验证方式
 
 1. 触发:"帮我做一个技能";
-2. 检查:输出目录通过 `skills-ref validate`;
-3. 实测:在 Agent 中触发并跑通一次真实任务。
+2. 用 skill_scaffold.py 生成骨架,目录通过 `skills-ref validate`;
+3. 检查:style_checker.py 无"必须"级问题;
+4. 实测:在 Agent 中触发并跑通一次真实任务。
 
