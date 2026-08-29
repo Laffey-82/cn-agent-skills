@@ -90,6 +90,18 @@ def test_discount_precision():
 
 **预防:** 约定金额一律用整数分存储;code review 时禁止金额浮点运算。
 
+## 辅助脚本
+
+[scripts/stack_parser.py](scripts/stack_parser.py) 从报错文本里提取异常类型、错误信息和调用链,标出异常抛出点:
+
+```bash
+python scripts/stack_parser.py error.log
+# 或从管道读入
+cat error.log | python scripts/stack_parser.py
+```
+
+脚本只做提取,结论需要人确认。
+
 ## 注意事项
 
 - **先复现再修**:无法复现的修复不算完成;
@@ -109,4 +121,5 @@ def test_discount_precision():
 1. 触发:"这个报错怎么排查""帮我查 Bug";
 2. 检查:报告含复现步骤、根因、修复、回归验证;
 3. 复现验证:用最初步骤重跑,确认问题消失。
+
 
