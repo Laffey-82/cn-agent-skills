@@ -49,6 +49,8 @@ metadata:
 
 ### 第 5 步:Performance / Memory 查性能
 
+面板用法、症状对照和 Console 报错分类见 [references/DEVTOOLS_GUIDE.md](references/DEVTOOLS_GUIDE.md)。
+
 - 卡顿:Performance 录制,看长任务和重渲染;
 - 内存涨:Memory 面板做堆快照对比;
 - 网络慢:Network 里看资源大小和加载时序;
@@ -104,3 +106,4 @@ metadata:
 1. 触发:"页面白屏""前端报错""按钮没反应";
 2. 检查:报告含 Console/Network 证据和根因;
 3. 复核:按修复后的步骤重走一遍,Console 干净、功能正常。
+

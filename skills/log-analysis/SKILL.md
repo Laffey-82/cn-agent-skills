@@ -44,6 +44,8 @@ cat app.log | jq 'select(.level == "ERROR")'
 
 ### 第 3 步:重建时间线
 
+检索命令、常见日志模式速认和脱敏规则见 [references/SEARCH_COMMANDS.md](references/SEARCH_COMMANDS.md)。
+
 - 按时间排序整理关键事件;
 - 记录每个事件的:时间、服务、级别、消息;
 - 确认日志时间源一致(跨机器要统一 NTP,否则关联会乱);
@@ -121,3 +123,4 @@ cat app.log | jq 'select(.level == "ERROR")'
 1. 触发:"帮我查下日志""这个报错怎么回事";
 2. 检查:报告含时间线、关联链路、根因和日志证据;
 3. 复核:对照原始日志,确认每条结论都有出处。
+

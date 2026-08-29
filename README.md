@@ -21,10 +21,17 @@
 | commit-message-writer | 按 Conventional Commits 生成提交信息,支持中文 | "写个 commit message" |
 | tech-doc-writer | 先读代码再写文档,示例全部实测过 | "给这个项目写 README" |
 | bug-diagnoser | 先复现、再取证、二分定位根因,修复后补回归测试 | "这个报错怎么排查" |
+| dev-env-troubleshooter | 服务起不来、端口被占、连不上数据库时,按阶梯逐层排查 | "本地起不来" |
+| log-analysis | 按时间线重建故障过程,用请求 ID 关联日志定位根因 | "帮我查下日志" |
+| frontend-debug | 白屏、报错、请求失败时,按 Console → Network 逐层排查 | "页面白屏了" |
 | git-workflow | 整理提交历史,原子提交,干净分支 | "帮我把提交整理干净" |
 | api-tester | 按真实契约生成 API 测试,确认环境后执行并出报告 | "给这个接口写测试" |
+| db-migration-reviewer | 审查迁移脚本的安全性、可回滚性和锁表风险 | "帮我看下这个迁移安不安全" |
+| db-schema-designer | 从需求出发设计表、字段、关系和索引 | "帮我设计数据模型" |
 | ci-cd-setup | 根据项目现状搭 CI/CD,先生成配置再跑通 | "帮我搭个 CI" |
-| natural-chinese-writer | 把 AI 腔的文字改成人话,保留原意 | "这段文字看着别扭,帮我改得像人写的" |
+| security-reviewer | 按 OWASP 思路查注入、越权、数据泄露等风险 | "帮我看下安不安全" |
+| performance-profiler | 先建基线再用 profiler 取证,定位性能瓶颈 | "这个接口好慢" |
+| natural-chinese-writer | 把僵硬套话改成自然表达,保留原意 | "这段文字看着别扭,改一下" |
 | skill-creator-cn | 从需求出发创建符合规范的新技能 | "帮我做一个技能" |
 | skill-style-guide | 检查技能是否符合仓库风格 | "这个技能风格对吗" |
 
@@ -84,6 +91,7 @@ curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/inst
 ## License
 
 [MIT](./LICENSE)
+
 
 
 
