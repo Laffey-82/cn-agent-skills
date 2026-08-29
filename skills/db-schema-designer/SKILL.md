@@ -47,6 +47,8 @@ metadata:
 
 ### 第 3 步:设计索引
 
+命名规范、索引原则和反模式清单见 [references/NAMING_INDEX.md](references/NAMING_INDEX.md)。
+
 原则:
 
 - 索引优先覆盖 WHERE、JOIN、ORDER BY 的列;
@@ -121,3 +123,4 @@ SQL
 1. 触发:"帮我设计数据模型""建几张表";
 2. 检查:交付物含表定义、索引、建表脚本、查询模式分析;
 3. 走查:用核心查询语句跑 EXPLAIN,确认索引命中。
+
