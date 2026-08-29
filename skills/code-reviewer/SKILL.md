@@ -66,6 +66,10 @@ AI 生成代码的常见问题,需额外检查:
 
 ### 第 4 步:输出审查报告
 
+完整的四维检查清单和级别定义见 [references/CHECKLIST.md](references/CHECKLIST.md)。
+
+完整的四维检查清单和级别定义见 [references/CHECKLIST.md](references/CHECKLIST.md)。
+
 ```markdown
 # 代码审查报告
 
@@ -107,3 +111,5 @@ AI 生成代码的常见问题,需额外检查:
 1. 触发:"帮我 review""检查这段代码";
 2. 检查:报告是否覆盖正确性/安全/性能/可维护性,并含严重级别;
 3. 抽查:任选一条 P0/P1 意见,人工确认问题真实存在。
+
+

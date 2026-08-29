@@ -75,6 +75,14 @@ git diff --cached          # 具体改动
 git commit -m "<subject>" -m "<body>"
 ```
 
+## 速查表
+
+详细的类型列表、写法对比和模板见 [references/CHEATSHEET.md](references/CHEATSHEET.md)。
+
+## 速查表
+
+详细的类型列表、写法对比和模板见 [references/CHEATSHEET.md](references/CHEATSHEET.md)。
+
 ## 输入与输出
 
 - 输入:git 暂存区改动(或用户描述的改动);
@@ -131,3 +139,5 @@ BREAKING CHANGE: v1 /login 接口移除,请迁移到 v2 /login。
 1. 触发:"写个 commit message";
 2. 检查:格式为 `<type>: <subject>`,subject ≤ 72 字符且动词开头;
 3. 抽查:对照 `git diff`,确认描述与改动一致。
+
+
