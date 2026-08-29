@@ -98,6 +98,16 @@ UPDATE orders SET discount = 0;
 -- 收紧(确认存量数据后,单独迁移)
 ```
 
+## 辅助脚本
+
+[scripts/migration_template.py](scripts/migration_template.py) 生成 up/down 迁移骨架和评审清单:
+
+```bash
+python scripts/migration_template.py add_user_email --db postgres
+```
+
+生成三个文件:up 脚本、down 脚本、评审清单。
+
 ## 注意事项
 
 - 不同数据库规则不同:PostgreSQL 用 `CREATE INDEX CONCURRENTLY`,MySQL 用 `ALGORITHM=INPLACE, LOCK=NONE`;
@@ -116,4 +126,5 @@ UPDATE orders SET discount = 0;
 1. 触发:"帮我看下这个迁移安不安全";
 2. 检查:报告覆盖锁表、回滚、数据一致性,问题带级别和证据;
 3. 抽查:任选一条 P0/P1 意见,对照迁移文件确认问题真实存在。
+
 

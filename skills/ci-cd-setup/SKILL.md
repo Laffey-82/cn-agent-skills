@@ -106,6 +106,16 @@ jobs:
 
 **说明:** 先只跑测试;后续要加 lint 先补 `ruff check` 脚本再进流水线。
 
+## 辅助脚本
+
+[scripts/ci_checker.py](scripts/ci_checker.py) 扫描 GitHub Actions 配置,标记硬编码密钥、未锁版本的 action、缺 checkout 等问题:
+
+```bash
+python scripts/ci_checker.py .github/workflows
+```
+
+脚本只做标记,结论需要人确认。
+
 ## 注意事项
 
 - 不要一次塞太多步骤,跑不通的流水线比没有更糟;
@@ -124,3 +134,4 @@ jobs:
 1. 触发:"帮我搭个 CI";
 2. 检查:配置中的每条命令本地跑通过,密钥走 secrets;
 3. 走查:推送后 CI 首次运行变绿,或失败的步骤有明确修复记录。
+
