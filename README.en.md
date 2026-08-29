@@ -8,7 +8,7 @@ Chinese-first agent skills for Claude Code, Codex, Cursor, TRAE and OpenCode. Ea
 
 English-first skill libraries miss how Chinese developers actually work. Triggers are written in English, so phrases like "帮我理下需求" often do nothing. Commit messages, docs and comments come out in a style that does not fit Chinese teams. Skills are scattered, with no coherent workflow between them.
 
-This repo turns the 20 most common development scenarios into skills. Content is written from scratch, not copied. Every skill passes the official validator and ships with trigger examples and verification steps.
+This repo turns the 22 most common development scenarios into skills. Content is written from scratch, not copied. Every skill passes the official validator and ships with trigger examples and verification steps.
 
 ## Skill list
 
@@ -22,16 +22,18 @@ This repo turns the 20 most common development scenarios into skills. Content is
 | tech-doc-writer | Read the code first, then write docs; every example is tested | "给这个项目写 README" |
 | bug-diagnoser | Reproduce, gather evidence, bisect the root cause, add a regression test | "这个报错怎么排查" |
 | dev-env-troubleshooter | Walk through a ladder of checks when services, ports or databases fail locally | "本地起不来" |
+| log-analysis | Rebuild the timeline from logs and correlate by request ID | "帮我查下日志" |
+| frontend-debug | Walk Console → Network to debug white screens and failures | "页面白屏了" |
 | git-workflow | Clean history, atomic commits, tidy branches | "帮我把提交整理干净" |
 | api-tester | Generate API tests from the real contract, run and report | "给这个接口写测试" |
 | db-migration-reviewer | Review migrations for safety, rollback and locking risks | "帮我看下这个迁移安不安全" |
+| db-schema-designer | Design tables, fields, relations and indexes from requirements | "帮我设计数据模型" |
 | ci-cd-setup | Set up CI/CD based on the project, generate config, run it | "帮我搭个 CI" |
-| natural-chinese-writer | Rewrite stiff or formulaic Chinese into natural prose | "这段文字看着别扭,帮我改得像人写的" |
-| log-analysis | Rebuild the timeline from logs and correlate by request ID | "帮我查下日志" |
-| frontend-debug | Walk Console → Network to debug white screens and failures | "页面白屏了" |
 | security-reviewer | Review code for injection, auth and data exposure issues | "帮我看下安不安全" |
 | performance-profiler | Baseline first, then profile to find bottlenecks | "这个接口好慢" |
-| db-schema-designer | Design tables, fields, relations and indexes from requirements | "帮我设计数据模型" |
+| cache-governor | Design keys and TTL, defend against penetration, hot-key and avalanche | "加个缓存" |
+| code-migrator | Migrate codebases in batches, each with tests and rollback | "把项目迁到 X" |
+| natural-chinese-writer | Rewrite stiff or formulaic Chinese into natural prose | "这段文字看着别扭,改一下" |
 | skill-creator-cn | Create a new spec-compliant skill from a need | "帮我做一个技能" |
 | skill-style-guide | Check a skill against the repo style | "这个技能风格对吗" |
 
@@ -77,6 +79,7 @@ See [docs/ROADMAP.md](./docs/ROADMAP.md).
 ## License
 
 [MIT](./LICENSE)
+
 
 
 
