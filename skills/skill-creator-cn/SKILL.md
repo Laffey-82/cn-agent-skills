@@ -1,6 +1,6 @@
 ---
 name: skill-creator-cn
-description: 创建新技能。引导用户从需求出发创建符合 Agent Skills 开放标准的中文技能,覆盖结构设计、SKILL.md 编写、references 拆分、校验与测试。Use to create a new, spec-compliant skill for this library.
+description: 创建新技能。当用户想新建一个 Agent 技能、把重复流程固化成技能,或要求符合本仓库标准时,从需求出发引导完成结构设计、SKILL.md 编写、references 拆分、校验与测试。Use to create a new, spec-compliant skill for this library.
 license: MIT
 metadata:
   version: "1.0.0"

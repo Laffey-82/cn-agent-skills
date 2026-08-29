@@ -1,6 +1,6 @@
 ---
 name: skill-style-guide
-description: "技能风格审查。检查技能是否符合 cn-agent-skills 的风格约定:命名、frontmatter、正文结构、语言与质量红线,输出问题清单。Use to review and align skills with this library's style conventions."
+description: "技能风格审查。创建新技能后、收到 PR 或技能风格不统一时,检查命名、frontmatter、正文结构、语言与质量红线,输出问题清单。Use to review and align skills with this library's style conventions."
 license: MIT
 metadata:
   version: "1.0.0"
