@@ -1,41 +1,32 @@
-# cn-agent-skills · Chinese Agent Skills Library
+# cn-agent-skills
 
-> Practical agent skills for Chinese-speaking developers. Make Claude Code / Codex / Cursor / TRAE / OpenCode understand Chinese workflows and follow engineering discipline.
+Chinese-first agent skills for Claude Code, Codex, Cursor, TRAE and OpenCode. Each skill solves one concrete problem; together they cover the flow from requirements to release.
 
-[简体中文](./README.md) · [Skill Index](#-skill-index) · [Install](#-install) · [Contributing](./CONTRIBUTING.md)
+[简体中文](./README.md) · [Skill list](#skill-list) · [Install](#install) · [Contributing](./CONTRIBUTING.md)
 
-## Why this project
+## Why
 
-Most English-first skill libraries miss three things Chinese developers need:
+English-first skill libraries miss how Chinese developers actually work. Triggers are written in English, so phrases like "帮我理下需求" often do nothing. Commit messages, docs and comments come out in a style that does not fit Chinese teams. Skills are scattered, with no coherent workflow between them.
 
-- **Weak triggers for Chinese input**: phrases like "帮我把需求理清楚" often don't trigger English-written skills;
-- **Local conventions ignored**: commit messages, docs, and code comments that don't fit Chinese team habits;
-- **Fragmented workflows**: no end-to-end line connecting requirements → planning → development → review → release.
+This repo turns the 13 most common development scenarios into skills. Content is written from scratch, not copied. Every skill passes the official validator and ships with trigger examples and verification steps.
 
-`cn-agent-skills` provides a unified, ready-to-use, Chinese-first skill set covering the whole engineering workflow.
+## Skill list
 
-## Features
-
-- 🇨🇳 Chinese-first content with bilingual descriptions
-- 📐 Follows the open [Agent Skills spec](https://agentskills.io)
-- 🔗 Closed-loop workflow: clarify requirements → decompose tasks → TDD → review → commit → document
-- 🚀 `gh skill` compatible distribution
-- 🧪 Every skill ships with trigger examples and a verification checklist
-
-## Skill Index
-
-| Skill | Problem it solves | Trigger example | Directory |
-|---|---|---|---|
-| requirement-clarifier | Vague requirements cause rework | "帮我把这个需求理清楚" | [skills/requirement-clarifier](./skills/requirement-clarifier) |
-| task-decomposer | Hard to split large tasks | "把这个功能拆成任务" | [skills/task-decomposer](./skills/task-decomposer) |
-| tdd-workflow | No TDD discipline | "按 TDD 来做" | [skills/tdd-workflow](./skills/tdd-workflow) |
-| code-reviewer | Unstructured code review | "帮我 review 这段代码" | [skills/code-reviewer](./skills/code-reviewer) |
-| commit-message-writer | Messy commit messages | "写个 commit message" | [skills/commit-message-writer](./skills/commit-message-writer) |
-| tech-doc-writer | Docs are hard to write | "给这个项目写 README" | [skills/tech-doc-writer](./skills/tech-doc-writer) |
-| bug-diagnoser | Bug fixing by guessing | "这个报错怎么排查" | [skills/bug-diagnoser](./skills/bug-diagnoser) |
-| git-workflow | Messy git history | "帮我把提交整理干净" | [skills/git-workflow](./skills/git-workflow) |
-| skill-creator-cn | Creating new skills | "帮我做一个技能" | [skills/skill-creator-cn](./skills/skill-creator-cn) |
-| skill-style-guide | Consistent skill style | "这个技能风格对吗" | [skills/skill-style-guide](./skills/skill-style-guide) |
+| Skill | What it does | Trigger example |
+|---|---|---|
+| requirement-clarifier | Clarify vague requirements through rounds of questions, output a spec | "帮我把这个需求理清楚" |
+| task-decomposer | Split large tasks into small verifiable ones, order by dependencies | "把这个功能拆成任务" |
+| tdd-workflow | Red-green-refactor loop, test first | "按 TDD 来做" |
+| code-reviewer | Review code on correctness, security, performance, maintainability | "帮我 review 这段代码" |
+| commit-message-writer | Conventional Commits messages, Chinese-friendly | "写个 commit message" |
+| tech-doc-writer | Read the code first, then write docs; every example is tested | "给这个项目写 README" |
+| bug-diagnoser | Reproduce, gather evidence, bisect the root cause, add a regression test | "这个报错怎么排查" |
+| git-workflow | Clean history, atomic commits, tidy branches | "帮我把提交整理干净" |
+| api-tester | Generate API tests from the real contract, run and report | "给这个接口写测试" |
+| ci-cd-setup | Set up CI/CD based on the project, generate config, run it | "帮我搭个 CI" |
+| natural-chinese-writer | Rewrite stiff or formulaic Chinese into natural prose | "这段文字看着别扭,帮我改得像人写的" |
+| skill-creator-cn | Create a new spec-compliant skill from a need | "帮我做一个技能" |
+| skill-style-guide | Check a skill against the repo style | "这个技能风格对吗" |
 
 ## Install
 
@@ -48,19 +39,19 @@ gh skill install Laffey-82/cn-agent-skills
 gh skill install Laffey-82/cn-agent-skills requirement-clarifier --agent claude-code
 ```
 
-### Method 2: One-liner script
+### Method 2: one-liner
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/install.sh | bash
 ```
 
-### Method 3: Manual copy
+### Method 3: manual
 
-Copy each folder under `skills/` into your agent's skill directory (e.g. `~/.claude/skills/`, `~/.codex/skills/`, `~/.cursor/skills/`, `~/.trae/skills/`, `~/.opencode/skills/`).
+Copy a skill folder under `skills/` into your agent's skill directory (e.g. `~/.claude/skills/`, `~/.codex/skills/`).
 
 ## Usage
 
-After installation, just say it in Chinese:
+Just say it in Chinese:
 
 ```text
 "帮我把这个需求理清楚,然后拆成任务"
@@ -70,7 +61,7 @@ After installation, just say it in Chinese:
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md). Every skill must pass the [CHECKLIST](./docs/CHECKLIST.md) quality gate.
+See [CONTRIBUTING.md](./CONTRIBUTING.md). New skills must pass the [CHECKLIST](./docs/CHECKLIST.md).
 
 ## Roadmap
 

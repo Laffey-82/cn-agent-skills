@@ -1,46 +1,44 @@
 # 贡献指南
 
-感谢你愿意为 `cn-agent-skills` 做贡献。这个仓库的质量标准是:**质量不合格的技能,宁可不收录。**
+这个仓库的东西可以随便拿去用,但往仓库里加内容,标准只有一条:能用、原创、像人写的。
 
-## 新增一个技能
+## 加一个新技能
 
-1. 先看 [docs/STYLE_GUIDE.md](./docs/STYLE_GUIDE.md),理解仓库的风格约定;
-2. 在 `skills/<技能名>/` 下创建 `SKILL.md`,frontmatter 必须包含 `name` 和 `description`:
-   - `name`:小写、连字符,必须与目录名完全一致;
-   - `description`:中英双语或中文为主,写清"做什么 + 何时触发";
-3. SKILL.md 主体控制在 500 行以内,复杂内容拆到 `references/` 或 `scripts/`;
-4. 用官方校验工具检查格式:`skills-ref validate ./skills/<技能名>`;
-5. 在至少一种 Agent 环境中用真实任务验证触发与执行,把结果写进 PR 描述;
-6. 更新 README 的技能索引表和 [docs/ROADMAP.md](./docs/ROADMAP.md)。
+1. 先读 [docs/STYLE_GUIDE.md](./docs/STYLE_GUIDE.md) 和 [docs/CHECKLIST.md](./docs/CHECKLIST.md),搞清仓库的规矩;
+2. 动手前想清楚三件事:解决什么问题、什么时候触发、产出是什么。想不清楚就先开个 Issue 讨论;
+3. 在 `skills/<技能名>/` 下写 `SKILL.md`,frontmatter 要有 `name` 和 `description`:
+   - `name` 小写、连字符,和目录名一致;
+   - `description` 写清"做什么 + 什么时候用",中文为主,附英文关键词方便搜索;
+4. SKILL.md 控制在 500 行内,内容多了拆到 `references/` 或 `scripts/`;
+5. 跑官方校验:`skills-ref validate ./skills/<技能名>`;
+6. 在至少一种 Agent 里用真实任务试一遍,能触发、能跑完、产出对,才算完成;
+7. 更新 README 技能列表和 [docs/ROADMAP.md](./docs/ROADMAP.md),然后在 PR 里写清楚验证过程。
 
-## 修改现有技能
+## 改现有技能
 
-- 保持原有风格与结构,不破坏触发词兼容性;
-- 修改后必须重新验证,并在 PR 中说明改动前后行为差异;
-- 涉及脚本时,说明运行环境与依赖。
+- 保持原有风格,别破坏已经能用的触发词;
+- 改完重新验证,PR 里说明改了什么、为什么改;
+- 涉及脚本的,写清运行环境和依赖。
 
-## PR 质量门禁
+## 什么内容不收
 
-每个 PR 必须通过 [docs/CHECKLIST.md](./docs/CHECKLIST.md) 的检查项:
-
-- 结构合规:SKILL.md 存在、frontmatter 合法、目录名与 name 一致;
-- 内容原创:不搬运、不抄袭、不改写他人成品;
-- 可执行:步骤具体到 Agent 能直接执行,附触发示例;
-- 可验证:有明确的"验证方式"说明(在哪个工具、用什么触发词、产出是什么);
-- 风格一致:符合 STYLE_GUIDE 的约定。
+- 抄来的、改写的、来源不明的;
+- 只有一两句话、没有步骤的"假技能";
+- 描述含糊,说不清什么时候触发的;
+- 没人验证过能不能用的。
 
 ## 提交信息
 
-遵循本仓库 [commit-message-writer](./skills/commit-message-writer) 技能定义的规范:
+按 [commit-message-writer](./skills/commit-message-writer) 的规范:
 
 ```text
-feat: 新增 requirement-clarifier 技能
-fix: 修正 tdd-workflow 第 3 步的表述歧义
-docs: 更新技能索引表
+feat: 新增 api-tester 技能
+fix: 修正 tdd-workflow 第三步的表述
+docs: 更新技能列表
 ```
 
-## 行为准则
+## 沟通
 
-- 友善、具体、对事不对人;
-- 不收录来源不明或涉及版权风险的内容;
-- 大改动先开 Issue 讨论,避免重复劳动。
+- 讨论问题就事论事;
+- 大改动先开 Issue,别闷头写完才发现方向不对;
+- 有争议的先讲依据,再讲立场。
