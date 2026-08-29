@@ -1,0 +1,32 @@
+name: validate-skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate all skills
+        run: |
+          set -e
+          failed=0
+          for skill in skills/*/; do
+            name=$(basename "$skill")
+            if npx -y skills-ref validate "skills/$name"; then
+              echo "PASS: $name"
+            else
+              echo "FAIL: $name"
+              failed=1
+            fi
+          done
+          if [ "$failed" -ne 0 ]; then
+            echo "::error::Skill validation failed"
+            exit 1
+          fi

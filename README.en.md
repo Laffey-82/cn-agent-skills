@@ -44,14 +44,14 @@ Most English-first skill libraries miss three things Chinese developers need:
 Requires [GitHub CLI](https://cli.github.com) v2.90.0+:
 
 ```bash
-gh skill install <your-username>/cn-agent-skills
-gh skill install <your-username>/cn-agent-skills requirement-clarifier --agent claude-code
+gh skill install Laffey-82/cn-agent-skills
+gh skill install Laffey-82/cn-agent-skills requirement-clarifier --agent claude-code
 ```
 
 ### Method 2: One-liner script
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<your-username>/cn-agent-skills/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/install.sh | bash
 ```
 
 ### Method 3: Manual copy
@@ -79,3 +79,4 @@ See [docs/ROADMAP.md](./docs/ROADMAP.md).
 ## License
 
 [MIT](./LICENSE)
+

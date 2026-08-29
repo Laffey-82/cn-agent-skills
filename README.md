@@ -45,16 +45,16 @@
 
 ```bash
 # 安装全部技能到当前默认 Agent
-gh skill install <你的用户名>/cn-agent-skills
+gh skill install Laffey-82/cn-agent-skills
 
 # 安装单个技能到指定 Agent
-gh skill install <你的用户名>/cn-agent-skills requirement-clarifier --agent claude-code
+gh skill install Laffey-82/cn-agent-skills requirement-clarifier --agent claude-code
 ```
 
 ### 方式二:一键脚本
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<你的用户名>/cn-agent-skills/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/install.sh | bash
 ```
 
 脚本会自动检测已安装的 Agent,并把技能复制到对应目录:
@@ -98,3 +98,4 @@ curl -fsSL https://raw.githubusercontent.com/<你的用户名>/cn-agent-skills/m
 ---
 
 *cn-agent-skills — 让 AI 编程更懂中文,更守纪律。*
+
