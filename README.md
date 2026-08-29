@@ -43,6 +43,22 @@
 | skill-creator-cn | 从需求出发创建符合规范的新技能 | "帮我做一个技能" |
 | skill-style-guide | 检查技能是否符合仓库风格 | "这个技能风格对吗" |
 
+## 典型使用流程
+
+技能按一条线串起来用,拿"做一个带登录的商品列表页"举例:
+
+```text
+1. "帮我把这个需求理清楚"          → requirement-clarifier 输出需求规格
+2. "把这个功能拆成任务"            → task-decomposer 拆出任务清单
+3. "按 TDD 实现登录接口"           → tdd-workflow 先写测试再实现
+4. "给这个接口写测试"              → api-tester 按契约跑用例
+5. "提交前 review 一下"            → code-reviewer 四维审查
+6. "写个 commit message"           → commit-message-writer 规范提交
+7. "帮我搭个 CI"                   → ci-cd-setup 自动化构建测试
+8. "这个接口好慢"                  → performance-profiler 建基线定位瓶颈
+```
+
+每步的产出是下一步的输入,和平时开发节奏一致。单独用也可以,哪个场景需要就触发哪个。
 ## 技能结构
 
 技能按深度分三层,都是按需加载:
@@ -108,6 +124,7 @@ curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/inst
 ## License
 
 [MIT](./LICENSE)
+
 
 
 
