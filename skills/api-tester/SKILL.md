@@ -56,6 +56,7 @@ metadata:
 没确认就不执行。写测试只写测试,不对生产数据下手。
 
 ### 第 4 步:生成并执行测试
+- 有 JSON 契约时,用 api_test_gen.py 生成 pytest 骨架(见下面的[辅助脚本](#辅助脚本)),再按实际契约核对补全;
 
 - 用项目已有的测试框架(curl 脚本、pytest、Jest 等);
 - 测试用例与契约一一对应,能追溯到第 2 步的用例表;
@@ -110,6 +111,19 @@ metadata:
 用例 3:账号不存在返回 404,契约预期 401。响应体提示"账号不存在",存在账号枚举风险。
 ```
 
+## 辅助脚本
+
+[scripts/api_test_gen.py](scripts/api_test_gen.py) 把契约 JSON 转成 pytest 测试骨架,支持路径参数、查询参数、请求头、响应字段类型断言:
+
+```bash
+# 生成契约模板
+python skills/api-tester/scripts/api_test_gen.py --new contract.json
+
+# 填好契约后生成测试
+python skills/api-tester/scripts/api_test_gen.py contract.json -o tests/test_login.py
+```
+
+生成的是骨架,用例和断言按实际契约核对后再执行。运行:`API_BASE_URL=<地址> pytest tests/test_login.py`。
 ## 注意事项
 
 - 契约以代码为准,文档对不上代码时标出来;
@@ -126,7 +140,8 @@ metadata:
 ## 验证方式
 
 1. 触发:"给这个接口写测试";
-2. 检查:用例表覆盖正常/边界/异常,执行前有环境确认记录;
-3. 复核:任选一个失败用例,人工确认差异真实存在。
+2. 跑脚本:有 JSON 契约时用 api_test_gen.py 生成骨架,核对后执行;
+3. 检查:用例表覆盖正常/边界/异常,执行前有环境确认记录;
+4. 复核:任选一个失败用例,人工确认差异真实存在。
 
 

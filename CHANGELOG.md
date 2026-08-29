@@ -14,6 +14,7 @@
 - requirement-clarifier:新增需求规格模板 SPEC_TEMPLATE.md 与规格检查脚本 spec_checker.py
 - tech-doc-writer:新增文档结构检查脚本 doc_checker.py(坏链接、围栏、占位符、空章节)
 - task-decomposer:新增任务清单检查脚本 task_checker.py(依赖环、重复编号、验收标准)
+- api-tester:新增契约转 pytest 骨架生成脚本 api_test_gen.py(路径参数、查询参数、字段类型断言)
 
 ## v0.7.0(2026-08-29)
 
