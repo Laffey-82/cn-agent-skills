@@ -66,6 +66,8 @@ metadata:
 1 → 2 → 3(每个任务一个 commit)
 ```
 
+
+写完用 task_checker.py 自查(见下面的[辅助脚本](#辅助脚本)),修掉标出的缺口再交付。
 ## 输入与输出
 
 - 输入:一个目标或大任务描述;
@@ -87,6 +89,15 @@ metadata:
 | 5 | 会话保持 | 4 | 中间件 | 刷新页面不退出登录 |
 ```
 
+## 辅助脚本
+
+[scripts/task_checker.py](scripts/task_checker.py) 检查任务清单表:必需列是否齐全、任务编号是否重复、依赖是否存在且无环、验收标准是否为空或含糊、有无占位符:
+
+```bash
+python skills/task-decomposer/scripts/task_checker.py <任务清单.md>
+```
+
+脚本只做标记,结论需要人确认。模板见 [references/DECOMPOSE_TEMPLATE.md](references/DECOMPOSE_TEMPLATE.md)。
 ## 注意事项
 
 - **拆到可执行为止**:如果用户说"不知道怎么开始",就拆到第一个任务可以直接动手;
@@ -103,6 +114,7 @@ metadata:
 ## 验证方式
 
 1. 触发:"把这个功能拆成任务""帮我规划一下实现步骤";
-2. 检查:每个任务是否满足"单一职责、可验收、有依赖说明";
-3. 走查:按清单顺序执行第一个任务,确认没有前置缺口。
+2. 跑脚本:`python skills/task-decomposer/scripts/task_checker.py <任务清单.md>`,无"必须"级问题;
+3. 检查:每个任务满足"单一职责、可验收、有依赖说明";
+4. 走查:按清单顺序执行第一个任务,确认没有前置缺口。
 

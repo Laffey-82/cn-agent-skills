@@ -13,6 +13,7 @@
 - skill-creator-cn:新增骨架生成脚本 skill_scaffold.py 与评审流程参考 REVIEW_PROCESS.md
 - requirement-clarifier:新增需求规格模板 SPEC_TEMPLATE.md 与规格检查脚本 spec_checker.py
 - tech-doc-writer:新增文档结构检查脚本 doc_checker.py(坏链接、围栏、占位符、空章节)
+- task-decomposer:新增任务清单检查脚本 task_checker.py(依赖环、重复编号、验收标准)
 
 ## v0.7.0(2026-08-29)
 
