@@ -101,6 +101,10 @@ metadata:
 4. 打开 http://localhost:3000
 ```
 
+## 参考
+
+README、快速开始、API 文档、架构文档的结构模板和质量自查清单见 [references/DOC_TEMPLATES.md](references/DOC_TEMPLATES.md)。
+
 ## 注意事项
 
 - **先读代码,再写文档**;禁止编造不存在的参数或命令;
@@ -120,3 +124,4 @@ metadata:
 1. 触发:"写 README""补文档";
 2. 检查:文档是否基于真实代码,所有命令示例可运行;
 3. 走查:按快速开始步骤执行一遍,确认能复现。
+
