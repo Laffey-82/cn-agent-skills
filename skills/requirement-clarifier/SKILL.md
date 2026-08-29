@@ -52,21 +52,7 @@ metadata:
 
 ### 第 4 步:输出需求规格文档
 
-将确认后的内容整理为结构化文档(直接输出在对话中,或应要求写入文件):
-
-```markdown
-# 需求规格:<名称>
-
-## 背景与目标
-## 用户与场景
-## 功能范围
-- 必须做:
-- 不做:
-## 验收标准
-## 边界与异常
-## 约束条件
-## 待确认问题
-```
+按 [references/SPEC_TEMPLATE.md](references/SPEC_TEMPLATE.md) 的结构整理(直接输出在对话中,或应要求写入文件)。写完用 spec_checker.py 自查,补上标出的缺口(见下面的[辅助脚本](#辅助脚本))。
 
 ## 输入与输出
 
@@ -96,6 +82,15 @@ metadata:
 - 任务按日期分组展示(今天/明天/更晚)
 ```
 
+## 辅助脚本
+
+[scripts/spec_checker.py](scripts/spec_checker.py) 检查需求规格文档的完整性:必需章节是否齐全、章节是否为空、验收标准是否含糊、有无未填占位符:
+
+```bash
+python skills/requirement-clarifier/scripts/spec_checker.py <需求规格.md>
+```
+
+模板见 [references/SPEC_TEMPLATE.md](references/SPEC_TEMPLATE.md)。脚本只做标记,结论需要人确认。
 ## 注意事项
 
 - **不要跳步**:不要听完需求就直接写代码,先澄清再实现;
@@ -112,6 +107,7 @@ metadata:
 ## 验证方式
 
 1. 触发:用"帮我把这个需求理清楚"或一段模糊需求描述触发;
-2. 检查:输出是否包含背景、范围、验收标准、边界、待确认问题;
-3. 确认:用户对复述内容无异议,或只做了少量修正。
+2. 检查:输出包含背景、范围、验收标准、边界、待确认问题;
+3. 跑脚本:`python skills/requirement-clarifier/scripts/spec_checker.py <输出文档>`,无"必须"级问题;
+4. 确认:用户对复述内容无异议,或只做了少量修正。
 

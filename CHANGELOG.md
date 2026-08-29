@@ -11,6 +11,7 @@
 
 - skill-style-guide:新增风格检查脚本 style_checker.py 与判断标准参考 REVIEW_GUIDE.md
 - skill-creator-cn:新增骨架生成脚本 skill_scaffold.py 与评审流程参考 REVIEW_PROCESS.md
+- requirement-clarifier:新增需求规格模板 SPEC_TEMPLATE.md 与规格检查脚本 spec_checker.py
 
 ## v0.7.0(2026-08-29)
 
