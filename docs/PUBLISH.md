@@ -1,49 +1,46 @@
-# cn-agent-skills 发布清单
+# cn-agent-skills 维护发布指南
 
-本地仓库已初始化并完成首个提交,只差"推到 GitHub"这一步。按顺序执行:
+仓库已发布在 [github.com/Laffey-82/cn-agent-skills](https://github.com/Laffey-82/cn-agent-skills)。本文件说明日常怎么改、什么时候发版。
 
-## 1. 创建 GitHub 远程仓库
+## 日常迭代
 
-在 GitHub 新建仓库,名称:`cn-agent-skills`,描述建议:
+1. 改技能、加资料、补脚本;
+2. 本地验证:
+   - `npx -y skills-ref validate ./skills/<技能名>`(每个改动的技能);
+   - Python 脚本改动跑 `python -m py_compile` 确认语法;
+3. 提交,信息按提交规范:
+   ```text
+   feat: 新增 XX 技能
+   docs: 补充 XX 参考
+   fix: 修正 XX 步骤
+   ```
+4. 推送到 main,CI 会自动跑技能校验和脚本语法检查。
 
-```text
-中文 Agent 技能库 · Chinese Agent Skills Library for Claude Code / Codex / Cursor / TRAE / OpenCode
-```
+## 发版规则
 
-- License 选择 MIT;
-- **不要**勾选 README/.gitignore(本地已有),否则推送会冲突。
+**只有大更新才发版。** 小迭代(文档、单个技能微调)只提交不发布。
 
-## 2. 替换 README 中的占位用户名
+满足以下任一情况算大更新:
 
-README.md / README.en.md 中所有 `<你的用户名>` / `<your-username>` 替换为你的 GitHub 用户名。
+- 新增了技能;
+- 一批技能有实质性深化(新脚本、新示例);
+- 仓库结构或工作流有大的调整。
 
-## 3. 推送
-
-```bash
-git remote add origin https://github.com/<你的用户名>/cn-agent-skills.git
-git push -u origin main
-```
-
-## 4. 官方校验与发布
-
-```bash
-gh skill publish        # 校验技能并建议开启安全设置
-gh skill publish --fix  # 自动修复元数据问题(如有)
-```
-
-## 5. 打首个 Release
+发版步骤:
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+git tag v0.8.0
+git push origin v0.8.0
+gh release create v0.8.0 --title "cn-agent-skills v0.8.0" --notes "一句话说明本次更新"
 ```
 
-在 GitHub 页面创建 Release,勾选 immutable releases(不可变发布,供应链安全)。
+同时更新 CHANGELOG.md。
 
-## 6. 冷启动推广(0 → 500 星)
+## 技能质量标准
 
-- Linux.do(资源荟萃 + 公益推广标签)、V2EX(分享创造)、NodeSeek;
-- Reddit:r/ClaudeAI、r/codex、r/ChatGPTCoding;
-- X/Twitter 发演示 GIF;
-- 投稿:阮一峰周刊、HelloGitHub、GitHubDaily;
-- 向 awesome-* 技能清单提 PR(互相导流)。
+- 原创,不搬运;
+- frontmatter 含 name + description,name 与目录名一致;
+- SKILL.md ≤ 500 行,复杂内容拆 references/;
+- 脚本只做标记或测量,结论由人确认;
+- 文案自然,不出现空泛套话和 emoji 堆砌;
+- 每个技能能说清:何时用、怎么用、产出什么、怎么验证。
