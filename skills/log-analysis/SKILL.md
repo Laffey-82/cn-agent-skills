@@ -104,6 +104,16 @@ cat app.log | jq 'select(.level == "ERROR")'
 
 **建议:** 修泄漏 + 加内存告警 + 调用方加熔断。
 
+## 辅助脚本
+
+[scripts/log_correlator.py](scripts/log_correlator.py) 按关联字段把分散日志串起来(支持 JSON 行和纯文本):
+
+```bash
+python scripts/log_correlator.py app.log --field trace_id --value abc123
+```
+
+脚本只做筛选,结论需要人确认。
+
 ## 注意事项
 
 - 日志是证据,结论必须能指到具体日志行;
@@ -123,4 +133,5 @@ cat app.log | jq 'select(.level == "ERROR")'
 1. 触发:"帮我查下日志""这个报错怎么回事";
 2. 检查:报告含时间线、关联链路、根因和日志证据;
 3. 复核:对照原始日志,确认每条结论都有出处。
+
 

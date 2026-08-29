@@ -80,6 +80,16 @@ netstat -ano | findstr :5173
 
 **预防:** 关 IDE 前先停 dev server;启动脚本里加端口检测提示。
 
+## 辅助脚本
+
+[scripts/port_check.py](scripts/port_check.py) 检查端口占用情况和占用进程:
+
+```bash
+python scripts/port_check.py 8080
+```
+
+脚本只做检查,是否结束进程需要用户确认。
+
 ## 注意事项
 
 - 先环境后代码,不要一上来就改业务代码;
@@ -99,4 +109,5 @@ netstat -ano | findstr :5173
 1. 触发:"本地起不来""端口被占""连不上数据库";
 2. 检查:排障记录按阶梯分层,每层有结论;
 3. 复核:按修复方案操作后,原操作能跑通。
+
 
