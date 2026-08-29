@@ -75,6 +75,7 @@ metadata:
 - 默认中文;如项目面向海外,可同时提供英文版;
 - 标题、关键词做 SEO 优化(如"Claude Code 技能安装""中文 Agent 技能库");
 - 标注最后验证时间。
+- 写完用 doc_checker.py 自查坏链接和结构问题(见下面的[辅助脚本](#辅助脚本)),再人工走查。
 
 ## 输入与输出
 
@@ -105,6 +106,16 @@ metadata:
 
 README、快速开始、API 文档、架构文档的结构模板和质量自查清单见 [references/DOC_TEMPLATES.md](references/DOC_TEMPLATES.md)。
 
+## 辅助脚本
+
+[scripts/doc_checker.py](scripts/doc_checker.py) 检查文档的结构问题:相对链接指向的文件是否存在、代码围栏是否配对、有无占位符和空章节,可按 --require 指定必需章节:
+
+```bash
+# 检查 README,要求三个必需章节
+python skills/tech-doc-writer/scripts/doc_checker.py README.md --require 快速开始 使用示例 License
+```
+
+脚本只做标记,结论需要人确认;示例能不能跑通由人验证。
 ## 注意事项
 
 - **先读代码,再写文档**;禁止编造不存在的参数或命令;
@@ -122,6 +133,7 @@ README、快速开始、API 文档、架构文档的结构模板和质量自查�
 ## 验证方式
 
 1. 触发:"写 README""补文档";
-2. 检查:文档是否基于真实代码,所有命令示例可运行;
-3. 走查:按快速开始步骤执行一遍,确认能复现。
+2. 跑脚本:`python skills/tech-doc-writer/scripts/doc_checker.py <文档> --require <必需章节>`,无"必须"级问题;
+3. 检查:文档基于真实代码,所有命令示例可运行;
+4. 走查:按快速开始步骤执行一遍,确认能复现。
 
