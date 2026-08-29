@@ -6,7 +6,7 @@ Chinese-first agent skills for Claude Code, Codex, Cursor, TRAE and OpenCode. Ea
 
 ![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
 ![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
-![skills](https://img.shields.io/badge/skills-26-green?style=flat-square)
+![skills](https://img.shields.io/badge/skills-29-green?style=flat-square)
 ![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
 
 
@@ -46,6 +46,9 @@ This repo turns the 23 most common development scenarios into skills. Content is
 | release-note-writer | Draft release notes or changelog entries from git history, breaking changes listed separately | "写 release notes" |
 | meeting-minutes | Turn meeting discussions into Chinese minutes with decisions and trackable action items | "记会议纪要" |
 | sql-reviewer | Scan SQL for anti-patterns: destructive ops without WHERE, SELECT *, leading-wildcard LIKE | "审一下这条 SQL" |
+| api-contract-designer | Design an API contract before implementation | "设计接口契约" |
+| tech-design-writer | Write a technical design doc with tradeoffs and risks | "写个技术方案" |
+| requirements-reviewer | Review a requirements doc or PRD for gaps | "评审一下这个需求" |
 
 ## Skill structure
 

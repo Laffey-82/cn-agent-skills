@@ -79,10 +79,6 @@ git commit -m "<subject>" -m "<body>"
 
 详细的类型列表、写法对比和模板见 [references/CHEATSHEET.md](references/CHEATSHEET.md)。
 
-## 速查表
-
-详细的类型列表、写法对比和模板见 [references/CHEATSHEET.md](references/CHEATSHEET.md)。
-
 ## 输入与输出
 
 - 输入:git 暂存区改动(或用户描述的改动);

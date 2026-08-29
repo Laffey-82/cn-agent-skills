@@ -6,7 +6,7 @@
 
 ![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
 ![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
-![skills](https://img.shields.io/badge/skills-26-green?style=flat-square)
+![skills](https://img.shields.io/badge/skills-29-green?style=flat-square)
 ![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
 
 
@@ -46,6 +46,9 @@
 | release-note-writer | 从 git 历史生成发版说明或 CHANGELOG 条目,破坏性变更单独列出 | "写 release notes" |
 | meeting-minutes | 把会议讨论整理成含结论与待办的中文纪要,待办有负责人和截止时间 | "记会议纪要" |
 | sql-reviewer | 扫描 SQL 反模式:高危操作缺 WHERE、SELECT *、前导通配 LIKE 等 | "审一下这条 SQL" |
+| api-contract-designer | 实现前定义 API 契约:方法、路径、参数、响应与错误码 | "设计接口契约" |
+| tech-design-writer | 产出技术方案:方案对比与选型、架构、数据、风险与上线 | "写个技术方案" |
+| requirements-reviewer | 评审需求文档/PRD,输出缺口清单 | "评审一下这个需求" |
 
 ## 典型使用流程
 

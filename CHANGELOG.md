@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.12.0(2026-08-30)
+
+技能数量:29,其中 27 个带可执行脚本,22 个带参考资料。
+
+### 新增技能
+
+- api-contract-designer:实现前定义 API 契约(方法/路径/参数/响应/错误码),附契约校验脚本
+- tech-design-writer:产出技术方案(方案对比与选型、架构、数据、风险与上线),附方案检查脚本
+- requirements-reviewer:评审需求文档/PRD,输出带严重级别的缺口清单,附检查脚本
+
+### 修复
+
+- commit-message-writer:修复提交信息生成脚本暂存区检测失效的问题
+- commit-message-writer:去除 SKILL.md 重复的速查表章节
+
+### 工程
+
+- CI 动作锁定具体版本(checkout/setup-node/setup-python)
+
 ## v0.11.0(2026-08-30)
 
 技能数量:26,其中 24 个带可执行脚本,22 个带参考资料。

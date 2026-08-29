@@ -43,8 +43,8 @@ def main() -> int:
         print("暂存区没有改动。先 git add 再运行。")
         return 1
 
-    files = [line[3:] for line in status.splitlines() if line.strip()]
-    staged = [f for f in files if f[:1] in {"A", "M", "D", "R", "C"}]
+    status_lines = [line for line in status.splitlines() if line.strip()]
+    staged = [line[3:] for line in status_lines if line[:1] in {"A", "M", "D", "R", "C"}]
     if not staged:
         print("没有已暂存的改动(git add 之后再来)。")
         return 1
