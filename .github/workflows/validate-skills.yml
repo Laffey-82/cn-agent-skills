@@ -13,6 +13,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
       - name: Validate all skills
         run: |
           set -e
@@ -30,4 +33,19 @@ jobs:
             echo "::error::Skill validation failed"
             exit 1
           fi
-
+      - name: Syntax-check python scripts
+        run: |
+          set -e
+          failed=0
+          while IFS= read -r f; do
+            if python -m py_compile "$f"; then
+              echo "OK: $f"
+            else
+              echo "SYNTAX FAIL: $f"
+              failed=1
+            fi
+          done < <(find skills -type f -name '*.py' | sort)
+          if [ "$failed" -ne 0 ]; then
+            echo "::error::Python syntax check failed"
+            exit 1
+          fi
