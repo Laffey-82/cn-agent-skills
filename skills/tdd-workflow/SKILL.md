@@ -45,6 +45,10 @@ metadata:
 2. 补上遗漏的边界测试;
 3. 输出:测试清单 + 覆盖率情况 + 遗留风险。
 
+## 完整示例
+
+一个可以直接运行的密码校验器红绿重构循环见 [examples/password-validator](examples/password-validator):先跑测试确认红灯,再实现变绿,最后提取常量重构。
+
 ## 测试写法参考
 
 测试命名、框架写法、红灯判断见 [references/TEST_WRITING.md](references/TEST_WRITING.md)。
@@ -99,4 +103,5 @@ def validate_password(pw: str) -> bool:
 1. 触发:"按 TDD 做""先写测试";
 2. 检查:提交顺序是否为 测试 → 实现 → 重构;
 3. 运行:测试套件全绿,且故意改错一处实现,确认有测试变红。
+
 
