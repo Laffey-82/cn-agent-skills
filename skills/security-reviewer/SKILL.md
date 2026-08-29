@@ -99,6 +99,16 @@ query = "SELECT * FROM users WHERE name = %s"
 cursor.execute(query, (user_input,))
 ```
 
+## 辅助脚本
+
+[scripts/security_scanner.py](scripts/security_scanner.py) 扫描目录下的代码,标记硬编码密钥、拼接 SQL、命令注入、路径穿越、裸 except、调试模式残留等可疑点:
+
+```bash
+python scripts/security_scanner.py <目录或文件>
+```
+
+脚本只做标记,结论需要人确认。
+
 ## 注意事项
 
 - 不确定的漏洞标注"需验证",不要吓唬人;
@@ -117,4 +127,5 @@ cursor.execute(query, (user_input,))
 1. 触发:"帮我看下安不安全""有没有漏洞";
 2. 检查:报告覆盖注入、认证授权、数据泄露、Web 通用项;
 3. 抽查:任选一条 P0/P1,对照代码确认问题真实存在。
+
 

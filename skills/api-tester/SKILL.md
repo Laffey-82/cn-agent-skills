@@ -73,6 +73,10 @@ metadata:
 ## 建议
 ```
 
+## 完整示例
+
+一个可运行的登录接口契约测试见 [examples/login-api](examples/login-api):自动起服务、跑 5 个用例、出报告,改坏契约就能看到用例变红。
+
 ## 用例设计参考
 
 用例类型、断言要点、框架写法见 [references/CASE_DESIGN.md](references/CASE_DESIGN.md)。
@@ -124,4 +128,5 @@ metadata:
 1. 触发:"给这个接口写测试";
 2. 检查:用例表覆盖正常/边界/异常,执行前有环境确认记录;
 3. 复核:任选一个失败用例,人工确认差异真实存在。
+
 

@@ -95,6 +95,16 @@ metadata:
 
 **结果:** 接口降到 120ms,提升 94%。
 
+## 辅助脚本
+
+[scripts/benchmark.py](scripts/benchmark.py) 测量接口 p50/p95/p99 与成功率,建立可复现基线:
+
+```bash
+python scripts/benchmark.py <URL> [请求数] [并发]
+```
+
+示例服务见 [examples/slow-api](examples/slow-api)。
+
 ## 注意事项
 
 - 不猜:每个结论都要有 profiler、日志或基线数据支撑;
@@ -114,4 +124,5 @@ metadata:
 1. 触发:"这个接口好慢""帮我查性能";
 2. 检查:报告含基线、瓶颈证据、优化前后数字;
 3. 复核:按报告步骤重跑,结果可复现。
+
 
