@@ -45,6 +45,10 @@ metadata:
 2. 补上遗漏的边界测试;
 3. 输出:测试清单 + 覆盖率情况 + 遗留风险。
 
+## 测试写法参考
+
+测试命名、框架写法、红灯判断见 [references/TEST_WRITING.md](references/TEST_WRITING.md)。
+
 ## 输入与输出
 
 - 输入:功能描述或 Bug 描述 + 技术栈;
@@ -95,3 +99,4 @@ def validate_password(pw: str) -> bool:
 1. 触发:"按 TDD 做""先写测试";
 2. 检查:提交顺序是否为 测试 → 实现 → 重构;
 3. 运行:测试套件全绿,且故意改错一处实现,确认有测试变红。
+
