@@ -6,7 +6,7 @@
 
 ![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
 ![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
-![skills](https://img.shields.io/badge/skills-24-green?style=flat-square)
+![skills](https://img.shields.io/badge/skills-25-green?style=flat-square)
 ![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
 
 
@@ -44,6 +44,7 @@
 | skill-style-guide | 检查技能是否符合仓库风格 | "这个技能风格对吗" |
 | weekly-report | 收集本周 git 提交,整理成"完成/进行中/风险/下一步"结构的中文周报 | "帮我写周报" |
 | release-note-writer | 从 git 历史生成发版说明或 CHANGELOG 条目,破坏性变更单独列出 | "写 release notes" |
+| meeting-minutes | 把会议讨论整理成含结论与待办的中文纪要,待办有负责人和截止时间 | "记会议纪要" |
 
 ## 典型使用流程
 

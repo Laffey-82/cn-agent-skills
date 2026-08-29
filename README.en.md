@@ -6,7 +6,7 @@ Chinese-first agent skills for Claude Code, Codex, Cursor, TRAE and OpenCode. Ea
 
 ![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
 ![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
-![skills](https://img.shields.io/badge/skills-24-green?style=flat-square)
+![skills](https://img.shields.io/badge/skills-25-green?style=flat-square)
 ![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
 
 
@@ -44,6 +44,7 @@ This repo turns the 23 most common development scenarios into skills. Content is
 | skill-style-guide | Check a skill against the repo style | "这个技能风格对吗" |
 | weekly-report | Turn this week's git history and work items into a Chinese weekly report | "帮我写周报" |
 | release-note-writer | Draft release notes or changelog entries from git history, breaking changes listed separately | "写 release notes" |
+| meeting-minutes | Turn meeting discussions into Chinese minutes with decisions and trackable action items | "记会议纪要" |
 
 ## Skill structure
 
