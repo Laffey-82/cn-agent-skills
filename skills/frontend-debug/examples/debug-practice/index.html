@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>前端调试练习页</title>
+</head>
+<body>
+  <h1>前端调试练习</h1>
+  <div id="user-info">加载中...</div>
+  <button id="load-btn">加载用户</button>
+  <button id="bad-btn">触发错误</button>
+
+  <script>
+    // 问题 1:接口返回结构里没有 profile,渲染时读 user.profile.name 会报错
+    function loadUser() {
+      fetch("/api/user")
+        .then(r => r.json())
+        .then(user => {
+          document.getElementById("user-info").innerHTML =
+            "用户:" + user.profile.name;
+        });
+    }
+
+    // 问题 2:按钮绑定了不存在的函数,点击没反应
+    document.getElementById("load-btn").addEventListener("click", loadUser);
+    document.getElementById("bad-btn").addEventListener("click", notDefined);
+
+    // 问题 3:请求的接口不存在,返回 404
+    loadUser();
+  </script>
+</body>
+</html>

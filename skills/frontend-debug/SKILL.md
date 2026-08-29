@@ -87,6 +87,10 @@ metadata:
 
 **验证:** 登录跳转后页面正常,Console 无红色报错。
 
+## 练习示例
+
+一个埋了 3 个常见问题的练习页见 [examples/debug-practice](examples/debug-practice):TypeError、事件绑定错误、404 请求,配合 DevTools 逐层排查。
+
 ## 辅助脚本
 
 [scripts/devtools_extract.py](scripts/devtools_extract.py) 从 HAR 文件或 Console 导出文本中提取失败请求、4xx/5xx、慢请求和错误行:
@@ -117,5 +121,6 @@ python scripts/devtools_extract.py console.txt
 1. 触发:"页面白屏""前端报错""按钮没反应";
 2. 检查:报告含 Console/Network 证据和根因;
 3. 复核:按修复后的步骤重走一遍,Console 干净、功能正常。
+
 
 
