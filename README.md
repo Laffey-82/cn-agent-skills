@@ -84,8 +84,16 @@ gh skill install Laffey-82/cn-agent-skills requirement-clarifier --agent claude-
 
 ### 方式二:一键脚本
 
+macOS / Linux:
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/install.sh | bash
+```
+
+Windows(PowerShell):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File install.ps1
 ```
 
 脚本会检测本机装了的 Agent,把技能复制到对应目录:
@@ -96,7 +104,7 @@ curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/inst
 | Codex | `~/.codex/skills/` | `.agents/skills/` |
 | Cursor | `~/.cursor/skills/` | `.cursor/skills/` |
 | TRAE | `~/.trae/skills/` | `.trae/skills/` |
-| OpenCode | `~/.opencode/skills/` | `.opencode/skills/` |
+| OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` |
 
 ### 方式三:手动
 

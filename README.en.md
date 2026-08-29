@@ -63,10 +63,18 @@ gh skill install Laffey-82/cn-agent-skills
 gh skill install Laffey-82/cn-agent-skills requirement-clarifier --agent claude-code
 ```
 
-### Method 2: one-liner
+### Method 2: install script
+
+macOS / Linux:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/install.sh | bash
+```
+
+Windows (PowerShell):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File install.ps1
 ```
 
 ### Method 3: manual

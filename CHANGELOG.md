@@ -1,5 +1,16 @@
 # Changelog
 
+## 未发布
+
+### 仓库
+
+- 新增 Windows 一键安装脚本(install.ps1),自动检测已装 Agent 并安装
+- 修正 OpenCode 全局技能目录,统一为 ~/.config/opencode/skills
+
+### 技能深化
+
+- skill-style-guide:新增风格检查脚本 style_checker.py 与判断标准参考 REVIEW_GUIDE.md
+
 ## v0.7.0(2026-08-29)
 
 技能数量:22,其中 16 个带可执行脚本或示例,18 个带参考资料。

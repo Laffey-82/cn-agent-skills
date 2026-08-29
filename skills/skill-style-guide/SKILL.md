@@ -16,6 +16,8 @@ metadata:
 
 ## 使用步骤
 
+先跑一遍检查脚本(见下面的[辅助脚本](#辅助脚本)),把机器能标记的项过掉,再按步骤人工核对。
+
 ### 第 1 步:检查命名与目录
 
 - 目录名 = `name` = 技能名;
@@ -86,11 +88,24 @@ metadata:
 与 STYLE_GUIDE.md 约定:一致 / 不一致项(列出)
 ```
 
+## 辅助脚本
+
+[scripts/style_checker.py](scripts/style_checker.py) 能扫描技能目录,标记命名、frontmatter、章节、空泛表述、代码围栏等风格问题:
+
+```bash
+# 从仓库根目录检查全部技能
+python skills/skill-style-guide/scripts/style_checker.py
+
+# 只检查一个技能
+python skills/skill-style-guide/scripts/style_checker.py api-tester
+```
+
+每条标记的判断标准见 [references/REVIEW_GUIDE.md](references/REVIEW_GUIDE.md)。脚本只做标记,结论需要人确认。
 ## 注意事项
 
 - 风格审查 ≠ 内容审查:内容问题(逻辑错误、安全风险)也要一并指出;
 - 不要为凑章节而加无内容章节;
-- 判断标准以 [docs/STYLE_GUIDE.md](../../docs/STYLE_GUIDE.md) 和 [docs/CHECKLIST.md](../../docs/CHECKLIST.md) 为准。
+- 判断标准以 [docs/STYLE_GUIDE.md](../../docs/STYLE_GUIDE.md)、[docs/CHECKLIST.md](../../docs/CHECKLIST.md) 和 [references/REVIEW_GUIDE.md](references/REVIEW_GUIDE.md) 为准。
 
 ## 不适用场景
 
@@ -100,5 +115,6 @@ metadata:
 ## 验证方式
 
 1. 触发:"这个技能风格对吗";
-2. 检查:输出包含结论 + 问题清单;
-3. 抽查:任选一条意见,对照 STYLE_GUIDE 确认有依据。
+2. 跑脚本:`python skills/skill-style-guide/scripts/style_checker.py <技能名>`,确认输出与人工结论一致;
+3. 检查:输出包含结论 + 问题清单;
+4. 抽查:任选一条意见,对照 STYLE_GUIDE 或 REVIEW_GUIDE 确认有依据。

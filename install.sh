@@ -59,7 +59,7 @@ detect_and_install() {
 
   # OpenCode
   if command -v opencode >/dev/null 2>&1; then
-    install_to "opencode" "${HOME}/.opencode/skills"
+    install_to "opencode" "${HOME}/.config/opencode/skills"
   fi
 }
 
@@ -71,7 +71,7 @@ echo "  cp -R ${SKILLS_SRC}/* ~/.claude/skills/"
 echo "  cp -R ${SKILLS_SRC}/* ~/.codex/skills/"
 echo "  cp -R ${SKILLS_SRC}/* ~/.cursor/skills/"
 echo "  cp -R ${SKILLS_SRC}/* ~/.trae/skills/"
-echo "  cp -R ${SKILLS_SRC}/* ~/.opencode/skills/"
+echo "  cp -R ${SKILLS_SRC}/* ~/.config/opencode/skills/"
 echo ""
 echo "重启你的 Agent 后,技能即生效。仓库发布到 GitHub 后,也推荐用:"
 echo "  gh skill install <owner>/cn-agent-skills"
