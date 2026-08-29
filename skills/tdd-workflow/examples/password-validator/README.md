@@ -11,7 +11,7 @@
 ## 运行
 
 ```bash
-pip install pytest
+pip install -r requirements.txt
 python run_tests.py
 ```
 
@@ -20,3 +20,4 @@ python run_tests.py
 ## 故意破坏验证
 
 把 `len(password) >= MIN_LENGTH` 改成 `>` 再跑,`test_exact_min_length_accepted` 应该变红——这证明测试真的在守护行为。
+

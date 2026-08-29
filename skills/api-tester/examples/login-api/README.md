@@ -13,7 +13,7 @@
 ## 运行
 
 ```bash
-pip install flask requests
+pip install -r requirements.txt
 python test_api.py
 ```
 
@@ -31,3 +31,4 @@ python test_api.py
 ## 契约和代码不一致时
 
 把 `app.py` 里 401 改成 403,重跑,`密码错误` 和 `账号不存在` 两个用例会 FAIL——这就是"契约测试发现接口实现漂移"的演示。
+
