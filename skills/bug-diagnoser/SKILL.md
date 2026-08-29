@@ -36,6 +36,8 @@ metadata:
 
 ### 第 3 步:定位根因
 
+高频根因清单、二分定位法和报告模板见 [references/ROOT_CAUSE_PATTERNS.md](references/ROOT_CAUSE_PATTERNS.md)。
+
 用"假设 → 验证"循环:
 
 1. 列出候选原因(按可能性排序);
@@ -107,3 +109,4 @@ def test_discount_precision():
 1. 触发:"这个报错怎么排查""帮我查 Bug";
 2. 检查:报告含复现步骤、根因、修复、回归验证;
 3. 复现验证:用最初步骤重跑,确认问题消失。
+

@@ -51,6 +51,8 @@ metadata:
 
 ### 第 4 步:输出任务清单
 
+模板、判断标准和常见拆法见 [references/DECOMPOSE_TEMPLATE.md](references/DECOMPOSE_TEMPLATE.md)。
+
 ```markdown
 # 任务清单:<目标>
 
@@ -103,3 +105,4 @@ metadata:
 1. 触发:"把这个功能拆成任务""帮我规划一下实现步骤";
 2. 检查:每个任务是否满足"单一职责、可验收、有依赖说明";
 3. 走查:按清单顺序执行第一个任务,确认没有前置缺口。
+
