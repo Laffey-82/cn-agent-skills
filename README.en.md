@@ -8,7 +8,7 @@ Chinese-first agent skills for Claude Code, Codex, Cursor, TRAE and OpenCode. Ea
 
 English-first skill libraries miss how Chinese developers actually work. Triggers are written in English, so phrases like "帮我理下需求" often do nothing. Commit messages, docs and comments come out in a style that does not fit Chinese teams. Skills are scattered, with no coherent workflow between them.
 
-This repo turns the 15 most common development scenarios into skills. Content is written from scratch, not copied. Every skill passes the official validator and ships with trigger examples and verification steps.
+This repo turns the 18 most common development scenarios into skills. Content is written from scratch, not copied. Every skill passes the official validator and ships with trigger examples and verification steps.
 
 ## Skill list
 
@@ -27,6 +27,9 @@ This repo turns the 15 most common development scenarios into skills. Content is
 | db-migration-reviewer | Review migrations for safety, rollback and locking risks | "帮我看下这个迁移安不安全" |
 | ci-cd-setup | Set up CI/CD based on the project, generate config, run it | "帮我搭个 CI" |
 | natural-chinese-writer | Rewrite stiff or formulaic Chinese into natural prose | "这段文字看着别扭,帮我改得像人写的" |
+| security-reviewer | Review code for injection, auth and data exposure issues | "帮我看下安不安全" |
+| performance-profiler | Baseline first, then profile to find bottlenecks | "这个接口好慢" |
+| db-schema-designer | Design tables, fields, relations and indexes from requirements | "帮我设计数据模型" |
 | skill-creator-cn | Create a new spec-compliant skill from a need | "帮我做一个技能" |
 | skill-style-guide | Check a skill against the repo style | "这个技能风格对吗" |
 
@@ -72,5 +75,6 @@ See [docs/ROADMAP.md](./docs/ROADMAP.md).
 ## License
 
 [MIT](./LICENSE)
+
 
 
