@@ -4,6 +4,12 @@
 
 [English](./README.en.md) · [技能索引](#技能索引) · [安装](#安装) · [贡献](./CONTRIBUTING.md)
 
+![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
+![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
+![skills](https://img.shields.io/badge/skills-22-green?style=flat-square)
+![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
+
+
 ## 背景
 
 英文技能库的问题,用过的人都知道:触发词是英文思维,中文说"帮我理下需求""把这事拆开",经常没反应;写出来的提交信息、文档、注释,一股洋味,跟中文团队的工程习惯对不上;技能之间各说各话,没有一个连贯的流程。
@@ -102,6 +108,7 @@ curl -fsSL https://raw.githubusercontent.com/Laffey-82/cn-agent-skills/main/inst
 ## License
 
 [MIT](./LICENSE)
+
 
 
 

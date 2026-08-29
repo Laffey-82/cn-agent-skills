@@ -4,6 +4,12 @@ Chinese-first agent skills for Claude Code, Codex, Cursor, TRAE and OpenCode. Ea
 
 [简体中文](./README.md) · [Skill list](#skill-list) · [Install](#install) · [Contributing](./CONTRIBUTING.md)
 
+![stars](https://img.shields.io/github/stars/Laffey-82/cn-agent-skills?style=flat-square)
+![license](https://img.shields.io/github/license/Laffey-82/cn-agent-skills?style=flat-square)
+![skills](https://img.shields.io/badge/skills-22-green?style=flat-square)
+![ci](https://img.shields.io/github/actions/workflow/status/Laffey-82/cn-agent-skills/validate-skills.yml?style=flat-square)
+
+
 ## Why
 
 English-first skill libraries miss how Chinese developers actually work. Triggers are written in English, so phrases like "帮我理下需求" often do nothing. Commit messages, docs and comments come out in a style that does not fit Chinese teams. Skills are scattered, with no coherent workflow between them.
@@ -88,6 +94,7 @@ See [docs/ROADMAP.md](./docs/ROADMAP.md).
 ## License
 
 [MIT](./LICENSE)
+
 
 
 
